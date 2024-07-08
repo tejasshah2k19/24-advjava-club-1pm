@@ -1,0 +1,17 @@
+action :: attribute is used to mention where our request submitted to the server 
+		  which resource is responsible for serve the request and response 
+
+
+method :: how data will transfer from client to server 
+		get: data will pass via url - plain text 
+		post : data will pass in hidden with basic encryption
+		
+		
+submit button : we must need to use this button to submit request on server 
+
+name : name attribute must be added to all the form tag otherwise data will not 
+		pass to the server 
+		
+----------------------------------------------------------------------------------		
+		 
+
