@@ -1,4 +1,4 @@
-action :: attribute is used to mention where our request submitted to the server 
+3action :: attribute is used to mention where our request submitted to the server 
 		  which resource is responsible for serve the request and response 
 
 
@@ -15,3 +15,77 @@ name : name attribute must be added to all the form tag otherwise data will not
 ----------------------------------------------------------------------------------		
 		 
 
+MVC - design pattern 
+
+model : data 
+view  : input output USER 
+controller : logic 
+
+
+
+facebook -> Signup ->
+	Signup.html -> fn ln em pwd : submit -> 
+			request -> server ->	
+					SignupServlet 
+					read 
+					validate 
+					db connection 
+					insert 
+							response -> Login.html 
+							
+							respinse -> Error {Signup}
+		
+		
+		view : Signup.html , Login.html
+		controller  :  SignupServlet 
+		model : read temp , db 					
+-------------------------------------------------------------------------							
+							
+//project->rightclick=>properties->
+//java build path -> libraries -> add external jar -> browse->
+//tomcat path -> lib -> servlet-api.jar -> open ->
+//click on order and exports -> select all -> apply and close 
+
+//1) class extends HttpServlet
+//2) override service()
+//3) url pattern 
+
+//jar -> servlet-api.jar 
+//HttpServlet 
+
+//paypal-api.jar 
+
+//aws-api.jar 
+
+//tomcat->lib ,   internet 
+
+//servlet is a java class
+
+//class -> thread ? 
+//class -> exception? 
+//class -> applet ? 
+			
+----------------------------------------------------------------------------------------------
+
+
+			
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							
