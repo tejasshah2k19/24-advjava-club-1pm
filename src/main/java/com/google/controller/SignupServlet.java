@@ -1,6 +1,7 @@
 package com.google.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +21,37 @@ public class SignupServlet extends HttpServlet {
 		// password
 		System.out.println(firstName);
 		System.out.println(lastName);
+	
+		
+		response.setContentType("text/html");//MIME -> kya ? what?
+		 
+		
+		//data type 
+		//10 ->
+		
+		//ram ->
+		
+
+		PrintWriter out = response.getWriter();
+		out.print("<b>Hi</b>");
+		
+		//PrintWriter -> byte and character  
+		//byte ->write()
+		//character ->print() 
+		//file write -> 
+		
+		
+		
+		//file -> data -> byte character 
+		
+		//FileOutputStream ->byte 
+		
+		//FileWriter -> character 
+		
+		//network -> 
 	}
+	
+	
 }
 
 //project->rightclick=>properties->
