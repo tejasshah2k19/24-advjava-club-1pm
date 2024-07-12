@@ -66,8 +66,26 @@ facebook -> Signup ->
 //class -> applet ? 
 			
 ----------------------------------------------------------------------------------------------
+JSP -> java server pages 
+       java servlet pages** 
+       
+JSP -> HTML 
 
+InputName.html
 
+InputName.jsp 
+	jsp -> HTML + Java 
+	by default every things are html in jsp 
+	but you can write java stuff inside jsp 
+	
+	to write java stuff we have some special symbols 
+	Scriptlet   : <% %>  : java logic 
+	expression  : <%= %> : java print 
+	declaration : <%! %> : instance level declaration** 
+---------------------------------------------------------------------------------------------------
+
+	
+	
 			
 		
 
