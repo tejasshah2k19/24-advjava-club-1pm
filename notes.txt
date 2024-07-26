@@ -84,7 +84,9 @@ InputName.jsp
 	declaration : <%! %> : instance level declaration** 
 ---------------------------------------------------------------------------------------------------
 
-	
+	${}   => expression lang 
+			EL 
+			
 	
 			
 		

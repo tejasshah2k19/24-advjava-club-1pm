@@ -20,6 +20,8 @@ public class InputNameServlet extends HttpServlet {
 		String lastName = request.getParameter("lastName");
 		// validation
 
+		 
+		
 		String error = "";
 		boolean isError = false;
 
