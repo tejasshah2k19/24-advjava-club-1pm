@@ -87,6 +87,32 @@ InputName.jsp
 	${}   => expression lang 
 			EL 
 			
+--------------------------------------------------------------------------
+
+driver => 
+	vendor ->webiste-> driver download 
+	
+	copy jar file into WEB-INF/lib folder
+	
+	activate jar -> 
+			right click on project -> 
+					properties -> java build path -> 
+						click on libraries tab -> {click on class path if present } ->
+						add jar -> browse-> project->webapp->webinf-lib-> .jar -> select/open 
+						-> click on order and export tab  
+						-> click on select all button -> apply and close 
+						
+--------------------------------------------------------------------------- 	
+						  
+Db connection -> 
+
+		 
+1) driver class name 
+2) url 
+3) userName
+4) password 
+
+
 	
 			
 		
