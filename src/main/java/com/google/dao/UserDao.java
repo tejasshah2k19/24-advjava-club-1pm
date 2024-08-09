@@ -3,6 +3,8 @@ package com.google.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import com.google.bean.UserBean;
 
@@ -34,5 +36,32 @@ public class UserDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public ArrayList<UserBean> getAllUsers() {
+		ArrayList<UserBean> users = new ArrayList<UserBean>();
+
+		try {
+			Class.forName(driverName);
+
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement pstmt = con.prepareStatement("select * from users");
+			ResultSet rs = pstmt.executeQuery();// ResultSet
+
+			while (rs.next()) {// false -> loop stop
+				UserBean user = new UserBean();
+				user.setUserId(rs.getInt("userId"));
+				user.setFirstName(rs.getString("firstName"));
+				user.setEmail(rs.getString("email"));
+				user.setPassword(rs.getString("password"));
+				users.add(user);
+			}
+
+		} catch (Exception e) {
+			System.out.println("ERROR in getAllUsers()");
+			e.printStackTrace();
+		}
+
+		return users;
 	}
 }
