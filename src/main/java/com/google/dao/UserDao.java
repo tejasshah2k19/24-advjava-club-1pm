@@ -48,10 +48,11 @@ public class UserDao {
 			PreparedStatement pstmt = con.prepareStatement("select * from users");
 			ResultSet rs = pstmt.executeQuery();// ResultSet
 
+			// resultset has all the data from the database
 			while (rs.next()) {// false -> loop stop
 				UserBean user = new UserBean();
-				user.setUserId(rs.getInt("userId"));
-				user.setFirstName(rs.getString("firstName"));
+				user.setUserId(rs.getInt("userId"));// userId name is belongs to database
+				user.setFirstName(rs.getString("firstName"));//
 				user.setEmail(rs.getString("email"));
 				user.setPassword(rs.getString("password"));
 				users.add(user);
@@ -64,4 +65,20 @@ public class UserDao {
 
 		return users;
 	}
+
+	public void deleteUserById(Integer userId) {
+		try {
+			Class.forName(driverName);
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement pstmt = con.prepareStatement("delete from users where userId = ?");
+			pstmt.setInt(1, userId);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("ERROR in deleteUserById()");
+			e.printStackTrace();
+		}
+
+	}
+
 }

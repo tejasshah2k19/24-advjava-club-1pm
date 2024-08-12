@@ -1,0 +1,131 @@
+DbSignup.jsp 
+	all input
+	
+	submit -> call DbSignupServlet 
+
+
+DbSignupServlet 
+	getParameter -> read all input 
+
+	validation -> problem -> redirect to DbSignup.jsp 
+	validation -> no problem -> 
+			bean object -> data set 
+			dao -> db insert method call -> bean => db insertion 
+			redirect to login
+
+UserDao ->
+		addUser()
+			DbConnection
+			query run -> PreparedStatement -> execute query ->
+					-> insert
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+List users -> 
+
+	DbListUserController ->
+		UserDao -> getAllUsers() -> select * from users  -> return ArrayList { multiple records } 
+		setAttribute -> jsp 
+		redirect -> jsp ->  ListAllUsers.jsp  
+
+  
+			 
+ListAllUsers.jsp 
+		array list -> getAttribute
+		jsp -> for -> print 
+
+
+---------------------------------------------------------------------------------------------------------
+
+Search User -> 
+
+DbSearchInput.jsp --> form -> texbox -> name : [     ] 
+				submit -> DbSearchController -> call 
+
+
+DbSearchController
+		getParameter -> input read : {Madhav}
+		UserDao -> method -> searchData(madhav) ->
+			db connection 
+			prepared 
+			select * from users where name like madhav 
+		 return ArrayList -> empty | with Data   
+
+			setAttribute -> ArrayList 
+			redirect DbSearchOutput.jsp 
+
+DbSearchOutput.jsp 
+	arraylist get attribute 
+	for -> data print 
+
+
+-------------------------------------------------------------------------------------------------------------
+
+select * from users where firstName like ?;
+
+pstmt.setString(1,sname+"%"); 
+
+ResultSet rs = pstmt.executeQuery();
+
+-------------------------------------------------------------------------------------------------------------
+delete user -> userId 
+
+input: userId 
+process : servlet 
+bean : NO 
+database : dao 
+output : list users 
+
+
+DbInputDeleteUser.jsp -> read userId -> input -> form 
+
+DbDeleteUserController
+		read userId 
+		dao -> deleteUserById(userId)
+			-> db connection
+			-> prepared -> delete query ->
+		redirect to the DbListUserController
+		
+DbListUserController-> User LISt on jsp 				
+
+
+-------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
