@@ -81,4 +81,29 @@ public class UserDao {
 
 	}
 
+	public UserBean getUserByUserId(Integer userId) {
+		UserBean userBean = new UserBean();
+
+		try {
+			Class.forName(driverName);
+
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement pstmt = con.prepareStatement("select * from users where userId  = ? ");
+			pstmt.setInt(1, userId);
+
+			ResultSet rs = pstmt.executeQuery();// ResultSet
+
+			rs.next();
+			userBean.setUserId(rs.getInt("userId"));// userId name is belongs to database
+			userBean.setFirstName(rs.getString("firstName"));//
+			userBean.setEmail(rs.getString("email"));
+			userBean.setPassword(rs.getString("password"));
+
+		} catch (Exception e) {
+			System.out.println("ERROR in getAllUsers()");
+			e.printStackTrace();
+		}
+		return userBean;
+	}
+
 }

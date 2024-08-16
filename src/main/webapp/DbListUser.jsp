@@ -13,11 +13,15 @@
 	ArrayList<UserBean> users = (ArrayList<UserBean>) request.getAttribute("users");
 	%>
 
+
+	<a href="DbSignup.jsp">Add New</a>
+	<br>
 	<table border="1">
 		<tr>
 			<th>UserId</th>
 			<th>FirstName</th>
 			<th>Email</th>
+			<th>Action</th>
 		</tr>
 
 		<%
@@ -27,6 +31,8 @@
 			out.print("<td>"+user.getUserId()+"</td>");
 			out.print("<td>"+user.getFirstName()+"</td>");
 			out.print("<td>"+user.getEmail()+"</td>");
+			out.print("<td><a href='DbDeleteUserController?userId="+user.getUserId()+"'>Delete</a>");
+			out.print(" | <a href='DbViewUserController?userId="+user.getUserId()+"'>View</a></td>");
 			out.print("</tr>");
 			
 			
