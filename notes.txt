@@ -121,9 +121,28 @@ hyperlink -> data -> query string
 
 ------------------------------------------------------------------------------- 
 
+	request -> pre process -> 
+	Signup.jsp -> input -> Servlet -> validation -> back 
+	Signup.jsp -> input -> XXXXX ->  validation -> back ->correct-> Servlet -> 
+	
+	
+	filter -> pre process ->
+	
+	whatsapp -> 55MB -> send ->upload? server ->download? you 
+	
+	whatsapp ->compressFilter->20MB-> upload ->server->download->20MB 
 	
 			
-		
+how to  create filter ? 
+
+1)class extends implements 	Filter interface
+2) override all the methods 
+	init()
+	destroy()
+	doFilter()
+3) @WebFilter 
+------------------------------------------------------------
+	
 
 			
 			
