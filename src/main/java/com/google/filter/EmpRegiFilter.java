@@ -13,15 +13,17 @@ import javax.servlet.annotation.WebFilter;
 @WebFilter("/EmpRegiServlet") // this url will check and server will call this filter on this url
 public class EmpRegiFilter implements Filter {
 	public void init(FilterConfig filterConfig) throws ServletException {
-
+		System.out.println("EmpRegiFilter::init()");
 	}
 
 	public void destroy() {
-
+		System.out.println("EmpRegiFilter::destroy()");
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
+
+		System.out.println("EmpRegiFilter::doFilter()");
 		String empName = request.getParameter("empName");
 		String department = request.getParameter("department");
 		String salary = request.getParameter("salary");

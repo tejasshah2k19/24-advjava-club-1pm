@@ -143,21 +143,105 @@ how to  create filter ?
 3) @WebFilter 
 ------------------------------------------------------------
 	
+can we have n number of filter for 1 servlet ? yes 
+can we have 1 filter for n number of servlet ? yes 
 
+
+IpFilter
+@WebFilter("/")
+
+
+------------------------------------------------------------
+filter ->
+init 
+
+doFilter 
+
+destroy	
+	
+
+
+
+servlet -> init() -> first request servlet 
+filter  -> init() -> server start 
+
+servlet -> service() -> n time, request 
+filter  -> doFilter() -> request : servlet 
+
+
+servlet -> destroy() -> shutdown the server 
+filter  -> destroy() -> shutdowm the server 
+			
+------------------------------------------------------------------------------			
+			
+Reusable web component --> 
+
+
+	1) dynamic inclusion :: <jsp:include page="Header.jsp"></jsp:include> --> standard action
+	2) static inclusion  :: <%@include file="Footer.jsp"%> 		--> directive 	
+			
+			
+		Header.jsp  3 line 
+		Footer.jsp  3 line 
+		
+		Home.jsp 5 line 
+		Cart.jsp 5 line 
+		
+		Home.jsp -> dynamic inclusion add Header.jsp  {5+0}
+		
+		Cart.jsp -> static inclusion add Header.jsp   {5+3}
+			
+			
+--------------------------------------------------------------------------			
+			 	
+ 
+how to create servlet ?
+
+1)class extends HttpServlet 
+2)override method -> service 
+3)@WebServlet 
+
+--------------------------------------------------------------------------			
+session ---> server 
+cookie ---> browser 
+
+.in vs .com   ?
+accept cookie ? 
+
+
+cookie -> information -> user's information -> 
+				name 
+				pincode 
+				address 
+session ---> information --> user's 		
+		creditcard 
+		otp
+		cvv 
+		
+		
+
+	
+			
+---------------------------------------------------------------------------			
+	how to set data in cookie --> 		
 			
 			
 			
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+1) chrome extension "edithiscookie"			
+
+
+
+
+
+
+
+
+
+
+
+
+
 			
 			
 			
