@@ -206,7 +206,30 @@ session ---> server
 cookie ---> browser 
 
 .in vs .com   ?
+	domain 
+	
+	.in 
+	.pk 
+	.au
+	.ca
+	
+	
+	amazon 
+		amazon.in -> 
+		amazon.com
+		amazon.au 
+		
+	.gov 
+	.nic 
+	.ai 
+	.tv 
+	.edu
+	.org 
+	.uni 
+	
+	
 accept cookie ? 
+	allow cookie -> 
 
 
 cookie -> information -> user's information -> 
@@ -232,17 +255,63 @@ session ---> information --> user's
 
 
 
+cookie -> logout -> setMaxAge 
 
+session -> logout -> invalid 
 
-
-
-
-
-
-
-
-
+user will not click on logout -> 
+	idle -> session timeout -> 
+	
+	
+	how to set session timeout ? 
+	1)
+	HttpSession session = request.getSession(); 
+	session.setMaxInactiveInterval(60*5);
 			
+	2) web.xml -> 
+
+	<session-config>
+		<session-timeout>5</session-timeout>
+	</session-config>
+	
+	
+
+
+
+--------------------------------------------
+
+server start -> connection open NSE BSE 
+
+server stop -> connection close NSE BSE 
+
+
+event -> listen ->
+server start ->
+server stop -> 
+session create -> {500}{}
+session destroy ->  
+
+how to create listener? 
+1)class implements XXXListener 
+2)override method 
+3)@WebListener 
+
+---------------------------------------------			
+	page directives -> 
+	attributes-> 
+		page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" session="false" import="java.util.Date"
+	import="java.util.Scanner,java.util.*" autoFlush="true" buffer="8kb"
+	info="Login page for user" isELIgnored="false" isThreadSafe="true"
+	errorPage="MyError.jsp	
 			
-			
+							
+							
+							
+							
+							
+							
+							
+							
+							
 							
